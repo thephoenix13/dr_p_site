@@ -103,13 +103,28 @@ The site uses AI-generated professional images referenced via CDN URLs. For prod
 - **Layout**: 1280px max-width, 4/8px spacing scale
 
 ## Deployment
+
+### GitHub Pages (Recommended for free hosting)
+Full setup guide in [DEPLOYMENT.md](./DEPLOYMENT.md). Quick version:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
+```
+
+Then enable GitHub Pages in Settings → Pages → Source: **GitHub Actions**. The included workflow auto-deploys on every push.
+
+### Other Hosting Options
 Deploy the `dist/` folder to any static hosting:
 - **Netlify**: Drag and drop or connect repo
 - **Vercel**: `vercel deploy`
 - **Cloudflare Pages**: Connect repo
 - **AWS S3 + CloudFront**: Upload dist/ to S3
 
-For SPA routing, configure a catch-all redirect to `index.html`.
+For SPA routing on non-GitHub hosts, configure a catch-all redirect to `index.html`.
 
 ## License
 © 2025 Dr P Health Solutions Pvt. Ltd. All rights reserved.
