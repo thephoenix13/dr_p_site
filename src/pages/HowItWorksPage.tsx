@@ -16,8 +16,17 @@ const steps = [
 export function HowItWorksPage() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/81d3bd5f-dff8-42a3-bdc8-db8e9af525a6/_result.png" 
+            alt="Health analytics and process management" 
+            className="w-full h-full object-cover opacity-15"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Badge variant="accent" className="bg-white/10 text-white border border-white/20 mb-4">Our Process</Badge>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             How Dr P Delivers Results

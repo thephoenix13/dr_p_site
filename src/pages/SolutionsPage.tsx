@@ -18,8 +18,17 @@ const iconMap: Record<string, React.ReactNode> = {
 export function SolutionsOverview() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/592c6224-e759-459e-921a-5b1bdc629a30/_result.png" 
+            alt="Occupational health services" 
+            className="w-full h-full object-cover opacity-20"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Badge variant="accent" className="bg-white/10 text-white border border-white/20 mb-4">Our Solutions</Badge>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Occupational Health Services for Every Enterprise Need
@@ -224,8 +233,17 @@ export function SolutionDetail({ slug }: SolutionDetailProps) {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/592c6224-e759-459e-921a-5b1bdc629a30/_result.png" 
+            alt="Occupational health service" 
+            className="w-full h-full object-cover opacity-15"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/solutions" className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-6 transition-colors">
             ← All Solutions
           </Link>

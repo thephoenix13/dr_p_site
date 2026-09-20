@@ -18,8 +18,17 @@ const iconMap: Record<string, React.ReactNode> = {
 export function IndustriesOverview() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/4da82678-d8bd-4c6d-b0e2-73254c642bb7/_result.png" 
+            alt="Industrial workplace" 
+            className="w-full h-full object-cover opacity-15"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Badge variant="accent" className="bg-white/10 text-white border border-white/20 mb-4">Industries We Serve</Badge>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Occupational Health Solutions for Every Industry
@@ -68,8 +77,20 @@ export function IndustryDetail({ slug }: IndustryDetailProps) {
 
   return (
     <main>
-      <section className="bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          {industry.slug === 'manufacturing' && (
+            <img src="https://image.qwenlm.ai/generated-images/4da82678-d8bd-4c6d-b0e2-73254c642bb7/_result.png" alt="Manufacturing facility" className="w-full h-full object-cover opacity-20" />
+          )}
+          {industry.slug === 'it-technology' && (
+            <img src="https://image.qwenlm.ai/generated-images/7e7fec15-d08e-446b-b26c-58123a2504a5/_result.png" alt="IT office environment" className="w-full h-full object-cover opacity-20" />
+          )}
+          {industry.slug === 'pharma' && (
+            <img src="https://image.qwenlm.ai/generated-images/c7850a11-3899-4d1b-84bf-be62bcf49e25/_result.png" alt="Pharmaceutical laboratory" className="w-full h-full object-cover opacity-20" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/industries" className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-6 transition-colors">
             ← All Industries
           </Link>

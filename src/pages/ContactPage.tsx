@@ -6,8 +6,17 @@ import { CONTACT, BUSINESS_HOURS } from '../data/content';
 export function ContactPage() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/2c94a2c9-a609-4ad0-8041-ecb667c3f760/_result.png" 
+            alt="Dr P corporate office" 
+            className="w-full h-full object-cover opacity-15"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Badge variant="accent" className="bg-white/10 text-white border border-white/20 mb-4">Contact Us</Badge>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Get in Touch with Dr P
@@ -88,11 +97,17 @@ export function ContactPage() {
                 Our Office
               </h2>
               <p className="text-neutral-700 mb-6">{CONTACT.address}</p>
-              <div className="rounded-xl overflow-hidden border border-neutral-200 h-64 bg-neutral-100 flex items-center justify-center">
-                <div className="text-center text-neutral-500">
-                  <MapPin className="w-8 h-8 mx-auto mb-2" />
-                  <p className="text-sm">Map loads with actual address</p>
-                  <p className="text-xs mt-1">Gurugram, Haryana</p>
+              <div className="rounded-xl overflow-hidden border border-neutral-200 h-64 relative">
+                <img 
+                  src="https://image.qwenlm.ai/generated-images/2c94a2c9-a609-4ad0-8041-ecb667c3f760/_result.png" 
+                  alt="Dr P office building in Gurugram" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/80 to-transparent p-4">
+                  <div className="flex items-center gap-2 text-white">
+                    <MapPin className="w-4 h-4" />
+                    <span className="text-sm font-medium">Dr P Office, Gurugram</span>
+                  </div>
                 </div>
               </div>
             </div>

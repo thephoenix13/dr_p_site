@@ -8,8 +8,17 @@ import { BLOG_POSTS, CONTACT } from '../data/content';
 export function ResourcesPage() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/81d3bd5f-dff8-42a3-bdc8-db8e9af525a6/_result.png" 
+            alt="Health analytics and insights" 
+            className="w-full h-full object-cover opacity-15"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Badge variant="accent" className="bg-white/10 text-white border border-white/20 mb-4">Resources</Badge>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Insights & Resources
@@ -25,8 +34,12 @@ export function ResourcesPage() {
           {/* Featured Post */}
           <div className="mb-12">
             <Card hover className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg h-48 lg:h-64 flex items-center justify-center">
-                <span className="text-4xl">📋</span>
+              <div className="rounded-lg h-48 lg:h-64 overflow-hidden">
+                <img 
+                  src="https://image.qwenlm.ai/generated-images/81d3bd5f-dff8-42a3-bdc8-db8e9af525a6/_result.png" 
+                  alt="Health analytics dashboard" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <Badge variant="accent" className="mb-3">{BLOG_POSTS[0].category}</Badge>
@@ -99,7 +112,16 @@ export function BlogPostPage({ slug }: { slug: string }) {
 
   return (
     <main>
-      <article className="py-16 md:py-24">
+      <article>
+        <div className="relative h-64 md:h-80 overflow-hidden">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/81d3bd5f-dff8-42a3-bdc8-db8e9af525a6/_result.png" 
+            alt={post.title} 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-primary/20" />
+        </div>
+        <div className="py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/resources" className="inline-flex items-center gap-1 text-neutral-500 hover:text-primary text-sm mb-8 transition-colors">
             ← Back to Resources
@@ -141,6 +163,7 @@ export function BlogPostPage({ slug }: { slug: string }) {
               Talk to Our Team
             </a>
           </div>
+        </div>
         </div>
       </article>
     </main>

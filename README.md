@@ -11,6 +11,7 @@ Corporate marketing website for Dr P, a workforce health and occupational health
 - 📞 Zero forms — all CTAs route to tel:, mailto:, wa.me, or calendar
 - 📝 Blog/Resources section (CMS-ready)
 - 🧭 Mega menu navigation with mobile support
+- 🖼️ AI-generated professional imagery throughout
 
 ## Tech Stack
 - **React 18** — UI framework
@@ -64,6 +65,13 @@ Replace these values in `src/data/content.ts` before deployment:
 
 ### Analytics
 Add your Plausible or GA4 tracking script to `index.html`.
+
+### Images
+The site uses AI-generated professional images referenced via CDN URLs. For production:
+1. Download images and place in `public/images/`
+2. Update image `src` attributes to use local paths (e.g., `/images/hero.jpg`)
+3. Add `width` and `height` attributes to prevent layout shift
+4. Consider using Next.js Image or a CDN with automatic optimization
 
 ## Pages
 - `/` — Home

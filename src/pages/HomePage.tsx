@@ -20,9 +20,17 @@ export function HomePage() {
     <main>
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-primary via-primary-600 to-primary-700 py-20 md:py-28 lg:py-36 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-accent rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-72 h-72 bg-accent rounded-full blur-3xl" />
+        <div className="absolute inset-0">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/041d77f7-54ed-4ea0-b99d-6fd039fdf9f4/_result.png" 
+            alt="Occupational health professionals conducting assessments" 
+            className="w-full h-full object-cover opacity-20"
+            loading="eager"
+            decoding="async"
+            width="1920"
+            height="1080"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -111,33 +119,45 @@ export function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-2xl border border-neutral-200 p-8 shadow-sm">
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <ShieldCheck className="w-6 h-6 text-accent" />
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src="https://image.qwenlm.ai/generated-images/592c6224-e759-459e-921a-5b1bdc629a30/_result.png" 
+                alt="Health professional conducting occupational health assessment" 
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <ShieldCheck className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white text-sm">100% Compliance</h3>
+                      <p className="text-xs text-white/70">Stay ahead of regulatory requirements</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-primary">100% Compliance</h3>
-                    <p className="text-sm text-neutral-500">Stay ahead of regulatory requirements</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <HeartPulse className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white text-sm">Healthier Workforce</h3>
+                      <p className="text-xs text-white/70">Early detection and preventive care</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <HeartPulse className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-primary">Healthier Workforce</h3>
-                    <p className="text-sm text-neutral-500">Early detection and preventive care</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <CalendarCheck className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-primary">Zero Downtime</h3>
-                    <p className="text-sm text-neutral-500">Onsite services minimize disruption</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <CalendarCheck className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white text-sm">Zero Downtime</h3>
+                      <p className="text-xs text-white/70">Onsite services minimize disruption</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -206,8 +226,21 @@ export function HomePage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 md:py-20 bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 md:py-20 bg-primary overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/1bfb2ec8-9d94-4f2f-8699-99f866b21958/_result.png" 
+            alt="" 
+            className="w-full h-full object-cover opacity-30"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            width="1920"
+            height="800"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">

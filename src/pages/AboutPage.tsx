@@ -7,8 +7,17 @@ import { STATS } from '../data/content';
 export function AboutPage() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/041d77f7-54ed-4ea0-b99d-6fd039fdf9f4/_result.png" 
+            alt="Dr P healthcare team" 
+            className="w-full h-full object-cover opacity-15"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Badge variant="accent" className="bg-white/10 text-white border border-white/20 mb-4">About Dr P</Badge>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Protecting India's Workforce Since 2009
@@ -35,21 +44,27 @@ export function AboutPage() {
                 Founded by a team of occupational health physicians and industrial safety experts, Dr P combines deep medical expertise with modern technology to deliver occupational health services that are efficient, compliant, and genuinely impactful for workers.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: <Heart className="w-6 h-6" />, title: 'People First', desc: 'Every decision starts with worker wellbeing' },
-                { icon: <Target className="w-6 h-6" />, title: 'Precision', desc: 'Industry-specific protocols and assessments' },
-                { icon: <Globe className="w-6 h-6" />, title: 'Pan-India', desc: 'Services across 20+ states and 100+ cities' },
-                { icon: <Award className="w-6 h-6" />, title: 'Excellence', desc: 'ISO 45001 aligned quality standards' },
-              ].map((item) => (
-                <Card key={item.title} className="text-center">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent mx-auto mb-3">
-                    {item.icon}
-                  </div>
-                  <h3 className="font-semibold text-primary text-sm mb-1">{item.title}</h3>
-                  <p className="text-xs text-neutral-500">{item.desc}</p>
-                </Card>
-              ))}
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src="https://image.qwenlm.ai/generated-images/1d14432a-8085-4d78-a212-8e9fa54373c0/_result.png" 
+                alt="Dr P medical director" 
+                className="w-full h-80 object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6">
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { icon: <Heart className="w-5 h-5" />, title: 'People First' },
+                    { icon: <Target className="w-5 h-5" />, title: 'Precision' },
+                    { icon: <Globe className="w-5 h-5" />, title: 'Pan-India' },
+                    { icon: <Award className="w-5 h-5" />, title: 'Excellence' },
+                  ].map((item) => (
+                    <div key={item.title} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <span className="text-accent">{item.icon}</span>
+                      <span className="text-white text-xs font-medium">{item.title}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
