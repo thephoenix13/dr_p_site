@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Factory, Monitor, Pill, Car, FlaskConical, Mountain, Truck, CheckCircle2, AlertTriangle, Shield, Calendar, Phone } from 'lucide-react';
+import { Factory, Monitor, Pill, Car, FlaskConical, Mountain, Truck, CheckCircle2, AlertTriangle, Shield, Calendar, Phone, Sparkles } from 'lucide-react';
 import { Card, IndustryCard } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { CTABand } from '../components/layout/CTABand';
+import { ScrollReveal, StaggerChildren, StaggerItem } from '../components/ui/Animations';
 import { INDUSTRIES, CONTACT } from '../data/content';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -18,40 +19,56 @@ const iconMap: Record<string, React.ReactNode> = {
 export function IndustriesOverview() {
   return (
     <main>
-      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden noise">
         <div className="absolute inset-0">
           <img 
             src="https://image.qwenlm.ai/generated-images/4da82678-d8bd-4c6d-b0e2-73254c642bb7/_result.png" 
-            alt="Industrial workplace" 
+            alt="" 
             className="w-full h-full object-cover opacity-15"
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 to-primary-600/90" />
+          <div className="absolute inset-0 gradient-mesh-dark" />
         </div>
+        <div className="absolute top-20 right-[10%] w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-blob" aria-hidden="true" />
+        <div className="absolute inset-0 grid-pattern opacity-30" aria-hidden="true" />
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Badge variant="accent" className="bg-white/10 text-white border border-white/20 mb-4">Industries We Serve</Badge>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Occupational Health Solutions for Every Industry
-          </h1>
-          <p className="text-lg text-white/80 max-w-2xl">
-            Dr P understands that each industry has unique health risks and compliance requirements. Our programs are tailored to address sector-specific challenges.
-          </p>
+          <ScrollReveal>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm text-white/90 font-medium">7 Industries Served</span>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 tracking-tight max-w-4xl">
+              Occupational Health Solutions for{' '}
+              <span className="text-gradient">Every Industry</span>
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
+              Dr P understands that each industry has unique health risks and compliance requirements. Our programs are tailored to address sector-specific challenges.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="py-16 md:py-24 bg-neutral-50 relative overflow-hidden">
+        <div className="absolute inset-0 dot-pattern opacity-50" aria-hidden="true" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {INDUSTRIES.map((industry) => (
-              <IndustryCard
-                key={industry.slug}
-                title={industry.title}
-                icon={iconMap[industry.icon]}
-                painPoints={industry.painPoints}
-                href={`/industries/${industry.slug}`}
-              />
+              <StaggerItem key={industry.slug}>
+                <IndustryCard
+                  title={industry.title}
+                  icon={iconMap[industry.icon]}
+                  painPoints={industry.painPoints}
+                  href={`/industries/${industry.slug}`}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 

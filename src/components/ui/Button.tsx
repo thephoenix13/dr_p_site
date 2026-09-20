@@ -15,8 +15,8 @@ interface BaseProps {
 type ButtonProps = BaseProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps>;
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: 'bg-accent hover:bg-accent-600 text-white shadow-sm',
-  secondary: 'bg-primary hover:bg-primary-600 text-white shadow-sm',
+  primary: 'bg-accent hover:bg-accent-600 text-white shadow-sm shadow-accent/20 hover:shadow-md hover:shadow-accent/30',
+  secondary: 'bg-primary hover:bg-primary-600 text-white shadow-sm shadow-primary/20 hover:shadow-md',
   ghost: 'bg-transparent hover:bg-neutral-100 text-primary border border-neutral-200',
 };
 
@@ -28,7 +28,7 @@ const sizeStyles: Record<ButtonSize, string> = {
 
 export function Button({ variant = 'primary', size = 'md', href, children, className, ...props }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2',
+    'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2',
     variantStyles[variant],
     sizeStyles[size],
     className

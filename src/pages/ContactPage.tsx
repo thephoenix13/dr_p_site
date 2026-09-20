@@ -1,29 +1,44 @@
-import { Phone, Mail, MessageCircle, MapPin, Clock, Calendar, Linkedin } from 'lucide-react';
+import { Phone, Mail, MessageCircle, MapPin, Clock, Calendar, Linkedin, Sparkles, ArrowUpRight } from 'lucide-react';
 import { ContactChannelCard } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
+import { ScrollReveal } from '../components/ui/Animations';
 import { CONTACT, BUSINESS_HOURS } from '../data/content';
 
 export function ContactPage() {
   return (
     <main>
-      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden noise">
         <div className="absolute inset-0">
           <img 
             src="https://image.qwenlm.ai/generated-images/2c94a2c9-a609-4ad0-8041-ecb667c3f760/_result.png" 
-            alt="Dr P corporate office" 
+            alt="" 
             className="w-full h-full object-cover opacity-15"
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 to-primary-600/90" />
+          <div className="absolute inset-0 gradient-mesh-dark" />
         </div>
+        <div className="absolute top-20 right-[10%] w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-blob" aria-hidden="true" />
+        <div className="absolute inset-0 grid-pattern opacity-30" aria-hidden="true" />
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Badge variant="accent" className="bg-white/10 text-white border border-white/20 mb-4">Contact Us</Badge>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Get in Touch with Dr P
-          </h1>
-          <p className="text-lg text-white/80 max-w-2xl">
-            Ready to discuss your workforce health needs? Reach out through any of the channels below. Our team typically responds within 2 business hours.
-          </p>
+          <ScrollReveal>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm text-white/90 font-medium">We're here to help</span>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 tracking-tight">
+              Get in Touch with{' '}
+              <span className="text-gradient">Dr P</span>
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
+              Ready to discuss your workforce health needs? Reach out through any of the channels below. Our team typically responds within 2 business hours.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -58,31 +73,39 @@ export function ContactPage() {
       </section>
 
       {/* Calendar */}
-      <section className="py-16 md:py-20 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <Badge variant="accent">Schedule a Meeting</Badge>
-            <h2 className="text-2xl md:text-3xl font-semibold text-primary mt-4 mb-2">Book a Demo or Consultation</h2>
-            <p className="text-neutral-500">Pick a time that works for you. Our team will prepare a personalized walkthrough of how Dr P can support your organization.</p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
-              <div className="p-8 text-center">
-                <Calendar className="w-12 h-12 text-accent mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-primary mb-2">Schedule via Calendar</h3>
-                <p className="text-neutral-500 mb-6">Click below to view available time slots and book your meeting.</p>
-                <a
-                  href={CONTACT.calendar}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-600 text-white font-semibold rounded-lg transition-colors text-lg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Calendar className="w-5 h-5" />
-                  Open Calendar
-                </a>
+      <section className="py-16 md:py-20 bg-neutral-50 relative overflow-hidden">
+        <div className="absolute inset-0 dot-pattern opacity-30" aria-hidden="true" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-8">
+              <Badge variant="accent">Schedule a Meeting</Badge>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mt-4 mb-2 tracking-tight">Book a Demo or Consultation</h2>
+              <p className="text-neutral-500 max-w-xl mx-auto">Pick a time that works for you. Our team will prepare a personalized walkthrough of how Dr P can support your organization.</p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-sm card-hover">
+                <div className="p-8 md:p-12 text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
+                    <Calendar className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-primary mb-3">Schedule via Calendar</h3>
+                  <p className="text-neutral-500 mb-8 max-w-md mx-auto">Click below to view available time slots and book your meeting with our team.</p>
+                  <a
+                    href={CONTACT.calendar}
+                    className="group inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-600 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-accent/20 hover:shadow-xl hover:-translate-y-0.5 text-lg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Calendar className="w-5 h-5" />
+                    Open Calendar
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

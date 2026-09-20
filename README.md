@@ -7,19 +7,27 @@ Corporate marketing website for Dr P, a workforce health and occupational health
 - 📱 Mobile-first responsive design
 - ♿ WCAG AA accessibility (skip links, focus states, semantic HTML)
 - 🔍 SEO-optimized (meta tags, structured data, clean URLs)
-- 🎨 Corporate design system with custom tokens
+- 🎨 Premium corporate design system with custom tokens
 - 📞 Zero forms — all CTAs route to tel:, mailto:, wa.me, or calendar
 - 📝 Blog/Resources section (CMS-ready)
-- 🧭 Mega menu navigation with mobile support
+- 🧭 Mega menu navigation with glass morphism header
 - 🖼️ AI-generated professional imagery throughout
+- ✨ Scroll-triggered animations (Framer Motion)
+- 🎯 Persona-based tab switcher (HR/EHS/CEO/Doctor)
+- 📊 Animated counters for statistics
+- 🎠 Marquee logo cloud with infinite scroll
+- 🃏 Case study carousel with navigation
+- 💎 Gradient mesh backgrounds, blob animations, glass morphism
+- 🎭 Noise textures, dot patterns, grid patterns
+- 🪄 Card hover lift effects, staggered reveals
 
 ## Tech Stack
 - **React 18** — UI framework
 - **Vite 6** — Build tool
-- **Tailwind CSS 4** — Styling
+- **Tailwind CSS 4** — Styling with custom design tokens
 - **React Router 6** — Client-side routing
 - **Lucide React** — Icons
-- **Framer Motion** — Animations (available)
+- **Framer Motion** — Scroll animations, stagger effects, counters
 
 ## Getting Started
 

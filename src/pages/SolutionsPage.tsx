@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { HeartPulse, ClipboardCheck, CalendarCheck, Building2, ShieldCheck, Video, ArrowRight, CheckCircle2, Calendar, Phone } from 'lucide-react';
+import { HeartPulse, ClipboardCheck, CalendarCheck, Building2, ShieldCheck, Video, ArrowRight, CheckCircle2, Calendar, Phone, Sparkles } from 'lucide-react';
 import { ServiceCard } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { Accordion } from '../components/ui/Accordion';
 import { CTABand } from '../components/layout/CTABand';
+import { ScrollReveal, StaggerChildren, StaggerItem } from '../components/ui/Animations';
 import { SERVICES, CONTACT } from '../data/content';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -18,40 +19,57 @@ const iconMap: Record<string, React.ReactNode> = {
 export function SolutionsOverview() {
   return (
     <main>
-      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-primary-600 py-16 md:py-24 overflow-hidden noise">
         <div className="absolute inset-0">
           <img 
             src="https://image.qwenlm.ai/generated-images/592c6224-e759-459e-921a-5b1bdc629a30/_result.png" 
-            alt="Occupational health services" 
+            alt="" 
             className="w-full h-full object-cover opacity-20"
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 to-primary-600/90" />
+          <div className="absolute inset-0 gradient-mesh-dark" />
         </div>
+        <div className="absolute top-20 right-[10%] w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-blob" aria-hidden="true" />
+        <div className="absolute bottom-10 left-[5%] w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-blob" style={{ animationDelay: '3s' }} aria-hidden="true" />
+        <div className="absolute inset-0 grid-pattern opacity-30" aria-hidden="true" />
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Badge variant="accent" className="bg-white/10 text-white border border-white/20 mb-4">Our Solutions</Badge>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Occupational Health Services for Every Enterprise Need
-          </h1>
-          <p className="text-lg text-white/80 max-w-2xl">
-            From pre-employment screening to onsite health centers, Dr P offers comprehensive workforce health solutions tailored to your industry and compliance requirements.
-          </p>
+          <ScrollReveal>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm text-white/90 font-medium">6 Comprehensive Services</span>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 tracking-tight max-w-4xl">
+              End-to-End Occupational Health —{' '}
+              <span className="text-gradient">Fully Digital</span>
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
+              From pre-employment screening to onsite health centers, Dr P offers comprehensive workforce health solutions tailored to your industry and compliance requirements.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="py-16 md:py-24 bg-neutral-50 relative overflow-hidden">
+        <div className="absolute inset-0 dot-pattern opacity-50" aria-hidden="true" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((service) => (
-              <ServiceCard
-                key={service.slug}
-                title={service.title}
-                description={service.shortDesc}
-                icon={iconMap[service.icon]}
-                href={`/solutions/${service.slug}`}
-              />
+              <StaggerItem key={service.slug}>
+                <ServiceCard
+                  title={service.title}
+                  description={service.shortDesc}
+                  icon={iconMap[service.icon]}
+                  href={`/solutions/${service.slug}`}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
